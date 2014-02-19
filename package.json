@@ -1,0 +1,32 @@
+{
+  "name": "grunt-sqlcmd",
+  "version": "0.1.1",
+  "description": "build and execute sqlcmd",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andyroyle/grunt-sqlcmd.git"
+  },
+  "keywords": [
+    "grunt"
+  ],
+  "author": "Andy Royle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andyroyle/grunt-sqlcmd/issues"
+  },
+  "homepage": "https://github.com/andyroyle/grunt-sqlcmd",
+  "peerDependencies": {
+    "grunt": "~0.4.2"
+  },
+  "dependencies": {
+    "async": "~0.2.10"
+  },
+  "devDependencies": {
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-jshint": "~0.8.0"
+  }
+}
