@@ -41,7 +41,7 @@ module.exports = function(grunt){
             childProcess.on('exit', function(code) {
                 if (code !== 0) {
                     log.error(f('Exited with code: %d.', code));
-                    return done(false);
+                    return finished(false);
                 }
 
                 verbose.ok(f('Exited with code: %d.', code));
