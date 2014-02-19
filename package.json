@@ -1,6 +1,6 @@
 {
   "name": "grunt-sqlcmd",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "build and execute sqlcmd",
   "main": "Gruntfile.js",
   "scripts": {

@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(grunt){
-    grunt.registerMultiTask('deploy-sql', function(){
+    grunt.registerMultiTask('sqlcmd', function(){
         var cp = require('child_process'),
             f = require('util').format,
             async = require('async'),
