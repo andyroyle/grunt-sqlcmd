@@ -26,6 +26,7 @@ module.exports = function(grunt){
         verbose.writeflags(options, 'Options');
 
         var commands = [];
+        var hasError = false;
 
         this.filesSrc.forEach(function(filepath) {
             commands.push(command + " -i " + filepath);
@@ -35,21 +36,24 @@ module.exports = function(grunt){
             verbose.subhead(command);
             var childProcess = cp.exec(command, {}, function(){});
 
-            childProcess.stdout.on('data', function (d) { log.write(d); });
+            childProcess.stdout.on('data', function (d) { verbose.write(d); });
             childProcess.stderr.on('data', function (d) { log.error(d); });
 
             childProcess.on('exit', function(code) {
-                if (code !== 0) {
-                    log.error(f('Exited with code: %d.', code));
-                    return finished(false);
+                if(code !== 0){
+                    hasError = true;
                 }
-
-                verbose.ok(f('Exited with code: %d.', code));
+                verbose.ok('Exited with code: %d', code);
                 finished();
             });
         };
 
         async.forEach(commands, execute, function(){
+            
+            if(hasError){
+                grunt.fail.fatal('sqlcmd exited with non-zero code, see above for details');
+            }
+
             done();
         });
     });
