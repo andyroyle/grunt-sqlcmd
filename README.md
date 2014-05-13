@@ -1,4 +1,4 @@
-# grunt-sqlcmd [![Build Status](https://travis-ci.org/andyroyle/grunt-sqlcmd.png?branch=master)](https://travis-ci.org/andyroyle/grunt-sqlcmd) [![NPM version](https://badge.fury.io/js/grunt-sqlcmd.png)](http://badge.fury.io/js/grunt-sqlcmd) ![Dependencies](https://david-dm.org/andyroyle/grunt-sqlcmd.png)
+# grunt-sqlcmd [![Build Status](https://travis-ci.org/opentable/grunt-sqlcmd.png?branch=master)](https://travis-ci.org/opentable/grunt-sqlcmd) [![NPM version](https://badge.fury.io/js/grunt-sqlcmd.png)](http://badge.fury.io/js/grunt-sqlcmd) ![Dependencies](https://david-dm.org/opentable/grunt-sqlcmd.png)
 
 Execute sqlcmd from the command line.
 
