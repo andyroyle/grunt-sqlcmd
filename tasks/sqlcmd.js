@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = function(grunt){
+
     grunt.registerMultiTask('sqlcmd', function(){
         var cp = require('child_process'),
             f = require('util').format,
@@ -10,18 +11,27 @@ module.exports = function(grunt){
             done = this.async(),
             options = this.options({
                 sqlcmd: 'sqlcmd.exe'
-            }),
-            command = [
-                options.sqlcmd,
-                "-S",
-                options.server,
-                "-d",
-                options.database,
-                "-U",
-                options.username,
-                "-P",
-                options.password
-            ].join(" ");
+            });
+
+        var command = [
+            options.sqlcmd,
+            "-S",
+            options.server,
+            "-d",
+            options.database,
+            "-U",
+            options.username,
+            "-P",
+            options.password
+        ].join(" ");
+
+        if (options.removeNumbering === true) {
+            command += ' -n';
+        }
+
+        if (options.enableQuotedIdentifiers === true) {
+            command += ' -I';
+        }
 
         verbose.writeflags(options, 'Options');
 
